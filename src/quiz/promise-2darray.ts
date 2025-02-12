@@ -16,7 +16,7 @@ function sum2DArray(arr: number[][]): Promise<number> {
          * Replace the logic in the setTimeout() with the actual logic to sum the numbers
          * to understand the difference in execution with and without setTimeout()
          **/
-        setTimeout(() => {
+        //setTimeout(() => {
             let sum = 0;
             for (let i = 0; i < arr.length; i++) {
                 for (let j = 0; j < arr[i].length; j++) {
@@ -25,7 +25,7 @@ function sum2DArray(arr: number[][]): Promise<number> {
                 }
             }
             resolve(sum);
-        }, 0);
+        //}, 0);
         console.log('returning from sum');
     });
 }

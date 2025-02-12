@@ -1,4 +1,21 @@
 - Extract the code in the setTimeout function and replace the setTimeout function  with the extracted code. Then run the main script. 
 - Is there a difference in the flow of execution from when the code was in the setTimeout function?
+
+Yes, there is a difference in the flow of execution when using the setTimeout function. When using the setTimeout function,
+the event loop causes the program to execute asynchronously. The sum2DArray function returns a promise which resolves after the event
+loop cycle. Without the setTimeout function, the program executes sychronously. In this case, the sum2Darray function will execute
+the summation operation and return the promise with the sum already embedded.
+
+
 - Is the flow of execution in both these examples different from the flow of execution with the examples using the fetch() API, which also returns a promise? 
 - If yes, explain the code execution difference. Add your explanation to this file.
+
+When setTimeout was in sum2DArray, the function would return right away, and the actual summation would happen later. This made it look asynchronous,
+even though it wasn’t waiting for anything external, rather it was just delaying the work.
+
+When setTimeout is removed, everything happens sychronously. The function doesn’t return until it finishes summing the numbers, and it returns the 
+promise with the embedded sum.
+
+On the other hand, fetch() is truly asynchronous. It starts a network request and instantly gives back a pending promise while the request runs in the background.
+The promise only resolves when the server responds. Unlike sum2DArray, fetch() doesn’t just delay execution, rather it actually waits for external data without
+stopping the rest of the program.
