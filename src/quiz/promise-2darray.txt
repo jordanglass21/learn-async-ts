@@ -6,7 +6,6 @@ the event loop causes the program to execute asynchronously. The sum2DArray func
 loop cycle. Without the setTimeout function, the program executes sychronously. In this case, the sum2Darray function will execute
 the summation operation and return the promise with the sum already embedded.
 
-
 - Is the flow of execution in both these examples different from the flow of execution with the examples using the fetch() API, which also returns a promise? 
 - If yes, explain the code execution difference. Add your explanation to this file.
 
